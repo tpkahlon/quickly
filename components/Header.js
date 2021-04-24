@@ -30,7 +30,7 @@ const Header = () => {
         </Button>
         <Button
           variant="secondary"
-          href="https://github.com/tpkahlon/shortcuts"
+          href="https://github.com/tpkahlon/quickly"
           target="_blank"
           rel="noopener noreferrer"
         >
