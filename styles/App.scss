@@ -7,6 +7,12 @@ ul,
   display: none;
 }
 
+.td-hook:last-of-type {
+  span {
+    margin: 0 !important;
+  }
+}
+
 table {
   td {
     &:last-child {

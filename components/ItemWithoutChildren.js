@@ -42,8 +42,8 @@ const ItemWithoutChildren = ({
               },
               td: ({ children }) => {
                 return (
-                  <td className="w-50 text-left p-3">
-                    <div className="cc d-flex align-items-center">
+                  <td className="w-50 text-left p-3 td-hook">
+                    <div className="d-flex align-items-center">
                       <CopyToClipboard
                         text={children[0].props.children[0]}
                         onCopy={() =>
