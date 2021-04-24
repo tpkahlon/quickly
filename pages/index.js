@@ -3,6 +3,7 @@ import mdParse from "md-2-json";
 import React, { useState } from "react";
 import Content from "../components/Content";
 import Notification from "../components/Notification";
+import { URL } from "../common";
 
 export default function Home({ data, text }) {
   const [settings, setSettings] = useState({
@@ -21,22 +22,7 @@ export default function Home({ data, text }) {
 }
 
 Home.getInitialProps = async () => {
-  const titles = [
-    "### Basic Methods",
-    "### React",
-    "### React Hooks",
-    "### React Native",
-    "### Redux",
-    "### PropTypes",
-    "### GraphQL",
-    "### Console",
-    "### React Components",
-    "## React Native Components",
-    "## Others",
-  ];
-  const r = await fetch(
-    `https://raw.githubusercontent.com/dsznajder/vscode-es7-javascript-react-snippets/master/README.md`
-  );
+  const r = await fetch(URL);
   const j = await r.text();
   const lines = j.split("\n");
   const newLines = lines

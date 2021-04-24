@@ -3,29 +3,16 @@ import { Container, Row, Col, Accordion } from "react-bootstrap";
 import Item from "./Item";
 import Header from "./Header";
 import Footer from "./Footer";
+import { KEYS } from "../common";
 
 const Content = ({ settings, setSettings }) => {
   const { content } = settings;
   let data = [];
-  let keys = [
-    "Basic Methods",
-    "React",
-    "React Hooks",
-    "Redux",
-    "React Native",
-    "PropTypes",
-    "GraphQL",
-    "Console",
-    "React Components",
-    "React Native Components",
-    "Others",
-  ];
-  let page = content;
   let count = 1;
-  for (let i = 0; i < keys.length; i++) {
+  for (let i = 0; i < KEYS.length; i++) {
     const hasChildren = () => {
       let childKeys = [];
-      const childKey = page[keys[i]];
+      const childKey = content[KEYS[i]];
       for (let item in childKey) {
         childKeys.push({
           index: count,
@@ -36,10 +23,10 @@ const Content = ({ settings, setSettings }) => {
       return childKeys;
     };
     const revisedText =
-      page[keys[i]].raw && page[keys[i]].raw.replace(/→|->/gi, "");
+      content[KEYS[i]].raw && content[KEYS[i]].raw.replace(/→|->/gi, "");
     data.push({
       index: count,
-      title: keys[i],
+      title: KEYS[i],
       text: revisedText || hasChildren(),
     });
     count++;
