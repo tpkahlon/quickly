@@ -11,19 +11,12 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
         {title}
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={index}>
-        <Card.Body>
-          <Table
-            striped
-            bordered
-            hover
-            responsive
-            size="sm"
-            className="m-0 text-white"
-          >
+        <Card.Body className="p-0">
+          <Table borderless hover responsive className="m-0" variant="dark">
             <thead>
               <tr>
-                <th className="w-50 text-left p-3">Prefix</th>
-                <th className="w-50 text-left p-3">Method</th>
+                <th className="w-50 text-left">Prefix</th>
+                <th className="w-50 text-left">Method</th>
               </tr>
             </thead>
             <tbody>
@@ -33,7 +26,7 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
                     key={idx}
                     className={title === "React Components" ? "hook" : ""}
                   >
-                    <td className="w-50 text-left p-3">
+                    <td className="w-50 text-left">
                       <div className="d-flex align-items-center">
                         <CopyToClipboard
                           text={i.title.replace(/`/g, "")}
@@ -47,7 +40,7 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
                           <Button
                             size="sm"
                             variant="secondary"
-                            className="d-flex align-items-center"
+                            className="d-flex align-items-start"
                           >
                             <MdContentCopy />
                           </Button>
@@ -57,7 +50,7 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
                         </span>
                       </div>
                     </td>
-                    <td className="text-left p-3 d-flex align-items-start">
+                    <td className="text-left d-flex align-items-start">
                       <CopyToClipboard
                         text={
                           i.text && i.text.includes("`")

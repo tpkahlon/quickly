@@ -18,7 +18,7 @@ const ItemWithoutChildren = ({
         {title}
       </Accordion.Toggle>
       <Accordion.Collapse eventKey={index}>
-        <Card.Body>
+        <Card.Body className="p-0">
           <ReactMarkdown
             children={source}
             remarkPlugins={[gfm]}
@@ -26,24 +26,23 @@ const ItemWithoutChildren = ({
               table: ({ children }) => {
                 return (
                   <Table
-                    striped
-                    bordered
+                    borderless
                     hover
                     responsive
-                    size="sm"
-                    className="m-0 text-white"
+                    className="m-0"
+                    variant="dark"
                   >
                     {children}
                   </Table>
                 );
               },
               th: ({ children }) => {
-                return <th className="w-50 text-left p-3">{children}</th>;
+                return <th className="w-50 text-left">{children}</th>;
               },
               td: ({ children }) => {
                 return (
-                  <td className="w-50 text-left p-3 td-hook">
-                    <div className="d-flex align-items-center">
+                  <td className="w-50 text-left td-hook">
+                    <div className="d-flex align-items-start">
                       <CopyToClipboard
                         text={
                           children[0].props.children[0]

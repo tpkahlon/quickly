@@ -38,6 +38,10 @@ code {
   word-wrap: unset;
 }
 
+.card-header {
+  padding: 0.75rem;
+}
+
 .notification {
   position: absolute;
   &__toast {
