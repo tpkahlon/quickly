@@ -12,15 +12,7 @@ export default function Home({ data, text }) {
   return (
     <>
       <Head>
-        <title>Shortcuts</title>
-        <link
-          rel="icon"
-          href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/1024px-Visual_Studio_Code_1.18_icon.svg.png"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/1024px-Visual_Studio_Code_1.18_icon.svg.png"
-        />
+        <title>Quickly</title>
       </Head>
       <Content settings={settings} setSettings={setSettings} />
       <Notification settings={settings} setSettings={setSettings} />

@@ -5,7 +5,6 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { MdContentCopy } from "react-icons/md";
 
 const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
-  console.log(title);
   return (
     <Card bg="dark" text="light">
       <Accordion.Toggle as={Card.Header} eventKey={index}>
