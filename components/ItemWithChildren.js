@@ -1,0 +1,71 @@
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import { Accordion, Card, Table, Button } from "react-bootstrap";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { MdContentCopy } from "react-icons/md";
+
+const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
+  return (
+    <Card bg="dark" text="light">
+      <Accordion.Toggle as={Card.Header} eventKey={index}>
+        {title}
+      </Accordion.Toggle>
+      <Accordion.Collapse eventKey={index}>
+        <Card.Body>
+          <Table
+            striped
+            bordered
+            hover
+            responsive
+            size="sm"
+            className="m-0 text-white"
+          >
+            <thead>
+              <tr>
+                <th className="w-50 text-left p-3">Prefix</th>
+                <th className="w-50 text-left p-3">Method</th>
+              </tr>
+            </thead>
+            <tbody>
+              {source.map((i, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td className="w-50 text-left p-3">
+                      <div className="d-flex align-items-center justify-content-between">
+                        <span className="span">
+                          <ReactMarkdown children={i.title} />
+                        </span>
+                        <CopyToClipboard
+                          text={i.title.replace(/`/g, "")}
+                          onCopy={() =>
+                            setSettings({
+                              ...settings,
+                              show: true,
+                            })
+                          }
+                        >
+                          <Button
+                            size="sm"
+                            variant="secondary"
+                            className="d-flex align-items-center ml-3"
+                          >
+                            <MdContentCopy />
+                          </Button>
+                        </CopyToClipboard>
+                      </div>
+                    </td>
+                    <td className="w-50 text-left p-3">
+                      <ReactMarkdown children={i.text} />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        </Card.Body>
+      </Accordion.Collapse>
+    </Card>
+  );
+};
+
+export default ItemWithChildren;
