@@ -34,7 +34,7 @@ const Header = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Source Code
+          Code
         </Button>
       </ButtonGroup>
     </Jumbotron>

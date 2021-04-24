@@ -47,7 +47,7 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
                           <Button
                             size="sm"
                             variant="secondary"
-                            className="d-flex align-items-center "
+                            className="d-flex align-items-center"
                           >
                             <MdContentCopy />
                           </Button>
@@ -57,7 +57,32 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
                         </span>
                       </div>
                     </td>
-                    <td className="w-50 text-left p-3">
+                    <td className="text-left p-3 d-flex align-items-start">
+                      <CopyToClipboard
+                        text={
+                          i.text && i.text.includes("`")
+                            ? i.text
+                                .replace(/`/g, "")
+                                .replace("javascript", "")
+                                .replace("JS", "")
+                                .trim()
+                            : i.text
+                        }
+                        onCopy={() =>
+                          setSettings({
+                            ...settings,
+                            show: true,
+                          })
+                        }
+                      >
+                        <Button
+                          size="sm"
+                          variant="secondary"
+                          className="d-flex align-items-center mr-3"
+                        >
+                          <MdContentCopy />
+                        </Button>
+                      </CopyToClipboard>
                       <ReactMarkdown children={i.text} />
                     </td>
                   </tr>

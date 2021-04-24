@@ -45,7 +45,11 @@ const ItemWithoutChildren = ({
                   <td className="w-50 text-left p-3 td-hook">
                     <div className="d-flex align-items-center">
                       <CopyToClipboard
-                        text={children[0].props.children[0]}
+                        text={
+                          children[0].props.children[0]
+                            ? children[0].props.children[0].trim()
+                            : false
+                        }
                         onCopy={() =>
                           setSettings({
                             ...settings,
@@ -56,12 +60,12 @@ const ItemWithoutChildren = ({
                         <Button
                           size="sm"
                           variant="secondary"
-                          className="d-flex align-items-center"
+                          className="d-flex align-items-center mr-3"
                         >
                           <MdContentCopy />
                         </Button>
                       </CopyToClipboard>
-                      <span className="ml-3">{children}</span>
+                      <span>{children}</span>
                     </div>
                   </td>
                 );
