@@ -43,8 +43,7 @@ const ItemWithoutChildren = ({
               td: ({ children }) => {
                 return (
                   <td className="w-50 text-left p-3">
-                    <div className="cc d-flex align-items-center justify-content-between">
-                      <span>{children}</span>
+                    <div className="cc d-flex align-items-center">
                       <CopyToClipboard
                         text={children[0].props.children[0]}
                         onCopy={() =>
@@ -57,11 +56,12 @@ const ItemWithoutChildren = ({
                         <Button
                           size="sm"
                           variant="secondary"
-                          className="d-flex align-items-center ml-3"
+                          className="d-flex align-items-center"
                         >
                           <MdContentCopy />
                         </Button>
                       </CopyToClipboard>
+                      <span className="ml-3">{children}</span>
                     </div>
                   </td>
                 );

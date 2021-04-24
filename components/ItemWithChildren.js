@@ -5,6 +5,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { MdContentCopy } from "react-icons/md";
 
 const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
+  console.log(title);
   return (
     <Card bg="dark" text="light">
       <Accordion.Toggle as={Card.Header} eventKey={index}>
@@ -29,12 +30,12 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
             <tbody>
               {source.map((i, idx) => {
                 return (
-                  <tr key={idx}>
+                  <tr
+                    key={idx}
+                    className={title === "React Components" ? "hook" : ""}
+                  >
                     <td className="w-50 text-left p-3">
-                      <div className="d-flex align-items-center justify-content-between">
-                        <span className="span">
-                          <ReactMarkdown children={i.title} />
-                        </span>
+                      <div className="d-flex align-items-center">
                         <CopyToClipboard
                           text={i.title.replace(/`/g, "")}
                           onCopy={() =>
@@ -47,11 +48,14 @@ const ItemWithChildren = ({ index, source, title, settings, setSettings }) => {
                           <Button
                             size="sm"
                             variant="secondary"
-                            className="d-flex align-items-center ml-3"
+                            className="d-flex align-items-center "
                           >
                             <MdContentCopy />
                           </Button>
                         </CopyToClipboard>
+                        <span className="span ml-3">
+                          <ReactMarkdown children={i.title} />
+                        </span>
                       </div>
                     </td>
                     <td className="w-50 text-left p-3">

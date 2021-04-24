@@ -44,7 +44,6 @@ const Content = ({ settings, setSettings }) => {
     });
     count++;
   }
-  console.log(data);
   return (
     <div className="min-vh-100 app">
       <Container>
@@ -53,7 +52,7 @@ const Content = ({ settings, setSettings }) => {
             <Header />
           </Col>
           <Col xs={12} className="my-3">
-            <Accordion className="rounded" defaultActiveKey={1}>
+            <Accordion className="rounded">
               {data
                 .sort((a, b) =>
                   a.title.toLowerCase() < b.title.toLowerCase() ? -1 : 1

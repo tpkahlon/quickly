@@ -20,10 +20,10 @@ class MyDocument extends Document {
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
           ></script>
-          <meta name="title" content="Shortcuts" />
+          <meta name="title" content="Quickly" />
           <meta
             name="description"
-            content="A reference site for developers, to learn about various shortcuts for JavaScript, React, Node."
+            content="Quickly is a reference site to learn about various shortcuts for JavaScript, React, Node while working inside Visual Studio Code."
           />
           <meta
             name="keywords"

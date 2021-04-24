@@ -4,11 +4,12 @@ import { Jumbotron, Button, ButtonGroup } from "react-bootstrap";
 const Header = () => {
   return (
     <Jumbotron fluid className="m-0 text-white rounded p-3 bg-dark">
-      <h1>Shortcuts</h1>
+      <h1>Quickly</h1>
       <p>
-        Shortcuts provide a friendly presentational site for developers to
-        quickly learn various shortcuts for JavaScript, React, Node from{" "}
-        <strong>Damian Sznajder</strong>'s Markdown file.
+        Quickly is a reference site to learn about various shortcuts for
+        JavaScript, React, Node while working inside Visual Studio Code. It is
+        parsed from <strong>Damian Sznajder</strong>'s Markdown file hosted on
+        GitHub.
       </p>
       <ButtonGroup aria-label="Action buttons">
         <Button
